@@ -20,8 +20,8 @@ jobs:  # Définition des jobs
       - name: Login to Docker Hub  # Nom de l'étape
         uses: docker/login-action@v2  # Action pour se connecter à Docker Hub
         with:  # Paramètres de connexion
-          username: ${{ secrets.DOCKER_USERNAME }}  # Nom d'utilisateur Docker Hub stocké dans les secrets
-          password: ${{ secrets.DOCKER_PASSWORD }}  # Mot de passe Docker Hub stocké dans les secrets
+          username: ${{ secrets.DOCKERHUB_USERNAME }}  # Nom d'utilisateur Docker Hub stocké dans les secrets
+          password: ${{ secrets.DOCKERHUB_TOKEN }}  # Mot de passe Docker Hub stocké dans les secrets
 
       - name: Build and push Docker image  # Nom de l'étape
         uses: docker/build-push-action@v2  # Action pour construire et pousser l'image Docker
