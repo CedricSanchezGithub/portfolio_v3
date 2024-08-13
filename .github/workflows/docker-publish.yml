@@ -34,3 +34,4 @@ jobs:
 
     - name: Push Docker image
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/next-portfolio:latest
+           docker push ${{ secrets.DOCKERHUB_USERNAME }}/next-portfolio:${{ github.run_number }}-${{ github.sha }}
