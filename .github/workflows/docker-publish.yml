@@ -49,6 +49,6 @@ jobs:
           docker buildx build \
             --platform linux/amd64,linux/arm64/v8 \  # Spécifie que l'image doit être construite pour les plateformes amd64 (PC classiques) et arm64/v8 (Raspberry Pi 4B en 64 bits).
             --push \                                 # Pousse l'image Docker directement sur Docker Hub après la construction.
-            --tag ${{ secrets.DOCKERHUB_USERNAME }}/next-portfolio:latest \  # Tag l'image avec "latest".
+            --tag ${{ secrets.DOCKERHUB_USERNAME }}/next-portfolio:latest \ .  # Tag l'image avec "latest".
             --tag ${{ secrets.DOCKERHUB_USERNAME }}/next-portfolio:${{ github.run_number }}-${{ github.sha }} .  # Tag l'image avec un tag unique basé sur le numéro du run GitHub et le SHA du commit.
         # Cette étape construit l'image Docker pour les architectures spécifiées (amd64 et arm64/v8) et la pousse sur Docker Hub avec deux tags différents.
