@@ -1,7 +1,7 @@
-LABEL authors="cedric"
-
 # Utilise l'image officielle de Node.js
-FROM node:18-alpine
+FROM node:20-alpine
+
+LABEL authors="cedric"
 
 # Définir le répertoire de travail
 WORKDIR /app
