@@ -7,13 +7,13 @@ FROM node:18-alpine
 WORKDIR /app
 
 # Copier les fichiers package.json et package-lock.json
-COPY package*.json ./
+COPY next-portfolio/package*.json ./
 
 # Installer les dépendances
 RUN npm install
 
 # Copier le reste des fichiers de l'application
-COPY . .
+COPY next-portfolio .
 
 # Construire l'application
 RUN npm run build
