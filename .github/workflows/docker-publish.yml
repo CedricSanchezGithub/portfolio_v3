@@ -1,5 +1,6 @@
 name: Build & Push - Portfolio Docker Image
 
+# Déclenche le workflow à chaque push sur la branche "master"
 on:
   push:
     branches:
@@ -7,36 +8,57 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # Utilise la dernière version stable d'Ubuntu comme environnement de construction
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        # Cette étape clone le dépôt GitHub dans l'environnement de build GitHub Actions.
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '18'
+        # Configure l'environnement Node.js en installant la version 18 de Node.js.
+        # Cela est nécessaire pour installer les dépendances et construire l'application.
 
       - name: Install dependencies
         working-directory: next-portfolio
         run: npm install
+        # Installe toutes les dépendances du projet spécifiées dans le fichier package.json.
+        # Le "working-directory" est défini pour pointer vers le dossier contenant le projet.
 
       - name: Build the app
         working-directory: next-portfolio
         run: npm run build
+        # Compile l'application Next.js en exécutant la commande de build.
+        # Cette étape prépare l'application pour la production.
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
+        # Configure Docker Buildx pour permettre la construction d'images multi-architecture.
+        # Buildx est nécessaire pour construire des images compatibles avec plusieurs plateformes, comme amd64 et arm64.
 
       - name: Log in to Docker Hub
         run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+        # Se connecte à Docker Hub en utilisant un jeton d'authentification stocké dans les secrets du dépôt GitHub.
+        # Cette étape est nécessaire pour pouvoir pousser l'image Docker construite sur Docker Hub.
 
       - name: Build and push Docker images
         run: |
           docker buildx build \
-            --platform linux/amd64,linux/arm64 \
-            --push \
-            --tag ${{ secrets.DOCKERHUB_USERNAME }}/next-portfolio:latest \
-            --tag ${{ secrets.DOCKERHUB_USERNAME }}/next-portfolio:${{ github.run_number }}-${{ github.sha }} \
+            --platform linux/amd64,linux/arm64/v8 \ # Spécifie que l'image doit être construite pour les plateformes amd64 (PC classiques) et arm64/v8 (Raspberry Pi 4B en 64 bits).
+            --push \                                # Pousse l'image Docker directement sur Docker Hub après la construction.
+            --tag ${{ secrets.DOCKERHUB_USERNAME }}/next-portfolio:latest \ # Tag l'image avec "latest".
+            --tag ${{ secrets.DOCKERHUB_USERNAME }}/next-portfolio:${{ github.run_number }}-${{ github.sha }} \ # Tag l'image avec un tag unique basé sur le numéro du run GitHub et le SHA du commit.
             .
+        # Cette étape construit l'image Docker pour les architectures spécifiées (amd64 et arm64/v8) et la pousse sur Docker Hub avec deux tags différents.
+
+      - name: Verify arm/v7 compatibility (optional)
+        run: |
+          docker buildx build \
+            --platform linux/arm/v7 \ # Optionnel : Construire aussi pour arm/v7 si nécessaire pour une compatibilité 32 bits.
+            --push \
+            --tag ${{ secrets.DOCKERHUB_USERNAME }}/next-portfolio:armv7-latest \
+            .
+        # Cette étape optionnelle permet de construire et de pousser une image compatible avec arm/v7 (32 bits), si vous avez besoin de cette compatibilité.
