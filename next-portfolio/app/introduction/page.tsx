@@ -41,10 +41,11 @@ export default function DocsPage() {
               for IT.
               <br />
               Last year, i started a training to become Fullstack Developer with
-              a professional title "Développeur Web & Web Mobile" Bac +2.
+              a professional title &quot;Développeur Web & Web Mobile&quot;
+              Bac+2.
               <br />
-              Now, i'm currently engaged with a training course with CA-TS and
-              the school EPSI.
+              Now, i&apos;m currently engaged with a training course with CA-TS
+              and the school EPSI.
               <br />I will work on Android with CA-TS, and DevOps with
               specialization on AI with EPSI.
             </CardBody>
