@@ -1,54 +1,35 @@
-name: Build & Push - Portfolio Docker Image
+name: Docker Build and Push  # Nom de l'action GitHub
 
-# Déclenche le workflow à chaque push sur la branche "master"
-on:
-  push:
-    branches:
-      - master
+on:  # Déclencheurs de l'action
+  push:  # Sur les actions de push
+    branches:  # Pour les branches spécifiques
+      - master  # Branche master
+  workflow_dispatch:  # Permet le déclenchement manuel
 
-jobs:
-  build:
-    runs-on: ubuntu-latest # Utilise la dernière version stable d'Ubuntu comme environnement de construction
+jobs:  # Définition des jobs
+  build:  # Nom du job
+    runs-on: ubuntu-latest  # Environnement sur lequel le job s'exécute
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-        # Cette étape clone le dépôt GitHub dans l'environnement de build GitHub Actions.
+    steps:  # Étapes du job
+      - name: Checkout code  # Nom de l'étape
+        uses: actions/checkout@v2  # Action pour récupérer le code source
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-        # Configure l'environnement Node.js en installant la version 18 de Node.js.
-        # Cela est nécessaire pour installer les dépendances et construire l'application.
+      - name: Set up Docker Buildx  # Nom de l'étape
+        uses: docker/setup-buildx-action@v2  # Action pour configurer Docker Buildx
 
-      - name: Install dependencies
-        working-directory: next-portfolio
-        run: npm install
-        # Installe toutes les dépendances du projet spécifiées dans le fichier package.json.
-        # Le "working-directory" est défini pour pointer vers le dossier contenant le projet.
+      - name: Login to Docker Hub  # Nom de l'étape
+        uses: docker/login-action@v2  # Action pour se connecter à Docker Hub
+        with:  # Paramètres de connexion
+          username: ${{ secrets.DOCKER_USERNAME }}  # Nom d'utilisateur Docker Hub stocké dans les secrets
+          password: ${{ secrets.DOCKER_PASSWORD }}  # Mot de passe Docker Hub stocké dans les secrets
 
-      - name: Build the app
-        working-directory: next-portfolio
-        run: npm run build
-        # Compile l'application Next.js en exécutant la commande de build.
-        # Cette étape prépare l'application pour la production.
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-        # Configure Docker Buildx pour permettre la construction d'images multi-architecture.
-        # Buildx est nécessaire pour construire des images compatibles avec plusieurs plateformes, comme amd64 et arm64.
-
-      - name: Log in to Docker Hub
-        run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
-        # Se connecte à Docker Hub en utilisant un jeton d'authentification stocké dans les secrets du dépôt GitHub.
-        # Cette étape est nécessaire pour pouvoir pousser l'image Docker construite sur Docker Hub.
-
-      - name: Build and push Docker images
-        run: |
-          docker buildx build \
-            --platform linux/amd64,linux/arm64/v8 \  # Spécifie que l'image doit être construite pour les plateformes amd64 (PC classiques) et arm64/v8 (Raspberry Pi 4B en 64 bits).
-            --push \                                 # Pousse l'image Docker directement sur Docker Hub après la construction.
-            --tag ${{ secrets.DOCKERHUB_USERNAME }}/next-portfolio:latest \  # Tag l'image avec "latest".
-            --tag ${{ secrets.DOCKERHUB_USERNAME }}/next-portfolio:${{ github.run_number }}-${{ github.sha }}.  # Tag l'image avec un tag unique basé sur le numéro du run GitHub et le SHA du commit.
-        # Cette étape construit l'image Docker pour les architectures spécifiées (amd64 et arm64/v8) et la pousse sur Docker Hub avec deux tags différents.
+      - name: Build and push Docker image  # Nom de l'étape
+        uses: docker/build-push-action@v2  # Action pour construire et pousser l'image Docker
+        with:  # Paramètres de construction et de push
+          context: .  # Contexte de construction Docker (le répertoire courant)
+          push: true  # Indique que l'image doit être poussée vers le registre Docker
+          platforms: linux/arm64  # Plateforme cible pour l'image Docker, spécifiquement pour Raspberry Pi 4
+          tags: |
+            cedsanc/next-portfolio:latest
+            cedsanc/next-portfolio:${{ github.run_number }}-${{ github.sha }}
+          # Le premier tag est 'latest', le second utilise le numéro du run GitHub et le SHA du commit pour versionner l'image
