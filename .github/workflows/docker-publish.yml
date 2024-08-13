@@ -51,14 +51,5 @@ jobs:
             --push \                                # Pousse l'image Docker directement sur Docker Hub après la construction.
             --tag ${{ secrets.DOCKERHUB_USERNAME }}/next-portfolio:latest \ # Tag l'image avec "latest".
             --tag ${{ secrets.DOCKERHUB_USERNAME }}/next-portfolio:${{ github.run_number }}-${{ github.sha }} \ # Tag l'image avec un tag unique basé sur le numéro du run GitHub et le SHA du commit.
-            .
+            . # Le point indique le répertoire courant comme contexte de build
         # Cette étape construit l'image Docker pour les architectures spécifiées (amd64 et arm64/v8) et la pousse sur Docker Hub avec deux tags différents.
-
-      - name: Verify arm/v7 compatibility (optional)
-        run: |
-          docker buildx build \
-            --platform linux/arm/v7 \ # Optionnel : Construire aussi pour arm/v7 si nécessaire pour une compatibilité 32 bits.
-            --push \
-            --tag ${{ secrets.DOCKERHUB_USERNAME }}/next-portfolio:armv7-latest \
-            .
-        # Cette étape optionnelle permet de construire et de pousser une image compatible avec arm/v7 (32 bits), si vous avez besoin de cette compatibilité.
