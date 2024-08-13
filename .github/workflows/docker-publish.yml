@@ -30,7 +30,7 @@ jobs:
       run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
     - name: Build Docker image
-      run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/next-portfolio:latest .
+      run: docker build --platform linux/arm64 -t ${{ secrets.DOCKERHUB_USERNAME }}/next-portfolio:latest .
 
     - name: Push Docker image
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/next-portfolio:latest
