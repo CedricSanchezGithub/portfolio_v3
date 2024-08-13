@@ -1,5 +1,5 @@
 # Utilise l'image officielle de Node.js
-FROM node:20-alpine
+FROM arm64v8/node:20-alpine
 
 LABEL authors="cedric"
 
