@@ -13,13 +13,12 @@ export default function Home() {
       <div className="inline-block max-w-lg text-center justify-center">
         <h1 className={title()}>Hello there!</h1>
         <br />
-        <h1 className={title()}>
-          I'm
-        </h1>
+        <h1 className={title()}>I'm</h1>
         <h1 className={title({ color: "blue" })}> Cédric Sanchez</h1>
         <br />
         <h2 className={subtitle({ class: "mt-4" })}>
-          I'm at the beginning of a new journey,< br />
+          I'm at the beginning of a new journey,
+          <br />
           to become a FullStack Developer.
         </h2>
       </div>
@@ -49,7 +48,17 @@ export default function Home() {
       <div className="mt-8">
         <Snippet hideCopyButton hideSymbol variant="bordered">
           <span>
-            Currently engaged with <Code color="primary"><Link isExternal href={"https://www.credit-agricole.com/marques-et-metiers/toutes-nos-marques/credit-agricole-technologies-et-services"}>CA-TS</Link></Code>
+            Currently engaged with{" "}
+            <Code color="primary">
+              <Link
+                isExternal
+                href={
+                  "https://www.credit-agricole.com/marques-et-metiers/toutes-nos-marques/credit-agricole-technologies-et-services"
+                }
+              >
+                CA-TS
+              </Link>
+            </Code>
           </span>
         </Snippet>
       </div>

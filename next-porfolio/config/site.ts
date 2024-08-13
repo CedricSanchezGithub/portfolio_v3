@@ -1,8 +1,8 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next.js + NextUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "Cédric Sanchez - Between Montpellier & Nîmes",
+  description: "Welcome in my portfolio :)",
   navItems: [
     {
       label: "Home",
@@ -10,11 +10,11 @@ export const siteConfig = {
     },
     {
       label: "Intro",
-      href: "/docs",
+      href: "/introduction",
     },
     {
       label: "Projets",
-      href: "/pricing",
+      href: "/projects",
     },
     {
       label: "Blog",
@@ -27,36 +27,24 @@ export const siteConfig = {
   ],
   navMenuItems: [
     {
-      label: "Profile",
-      href: "/profile",
+      label: "Home",
+      href: "/",
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: "Intro",
+      href: "/introduction",
     },
     {
-      label: "Projects",
+      label: "Projets",
       href: "/projects",
     },
     {
-      label: "Team",
-      href: "/team",
+      label: "Blog",
+      href: "/blog",
     },
     {
-      label: "Calendar",
-      href: "/calendar",
-    },
-    {
-      label: "Settings",
-      href: "/settings",
-    },
-    {
-      label: "Help & Feedback",
-      href: "/help-feedback",
-    },
-    {
-      label: "Logout",
-      href: "/logout",
+      label: "About",
+      href: "/about",
     },
   ],
   links: {
