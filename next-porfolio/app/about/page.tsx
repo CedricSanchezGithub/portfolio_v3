@@ -7,7 +7,7 @@ import { title } from "@/components/primitives";
 export default function AboutPage() {
   return (
     <div>
-      <h1 className={title()}>About</h1>
+      <h1 className={title({ color: "blue" })}>About</h1>
       <Card className={"my-4"}>
         <CardHeader />
         <CardBody>

@@ -8,7 +8,7 @@ import { title } from "@/components/primitives";
 export default function PricingPage() {
   return (
     <div>
-      <h1 className={title()}>My project</h1>
+      <h1 className={title({ color: "blue" })}>My project</h1>
       <div className={"flex flex-wrap"}>
         <Card className={"p-4 m-4"}>
           <CardHeader className={"justify-evenly w-full"}>
