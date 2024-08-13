@@ -8,7 +8,7 @@ export default function AboutPage() {
   return (
     <div>
       <h1 className={title()}>About</h1>
-      <Card>
+      <Card className={"my-4"}>
         <CardHeader />
         <CardBody>
           This portfolio showcases my journey, my projects, and my aspirations.
@@ -19,7 +19,7 @@ export default function AboutPage() {
         <CardFooter>
           <User
             avatarProps={{
-              src: "https://i.pravatar.cc/150?u=a04258114e29026702d",
+              src: "./portrait.png",
             }}
             description="Software Engineer"
             name="Cédric Sanchez"
