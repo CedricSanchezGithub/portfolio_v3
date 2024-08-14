@@ -7,6 +7,10 @@ import React, { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 
 import { title } from "@/components/primitives";
+import {
+  LineMdChevronSmallLeft,
+  LineMdChevronSmallRight,
+} from "@/components/icons";
 
 export default function PricingPage() {
   const [emblaRef, emblaApi] = useEmblaCarousel();
@@ -21,11 +25,11 @@ export default function PricingPage() {
 
   return (
     <div>
-      <h1 className={title({ color: "blue" })}>My project</h1>
+      <h1 className={title({ color: "blue" })}>My projects</h1>
       <div className="embla">
         <div ref={emblaRef} className="embla__viewport">
           <div className="embla__container">
-            <Card className={"p-4 m-4 embla__slide"}>
+            <Card className={"p-4 m-4 embla__slide justify-between"}>
               <CardHeader className={"justify-evenly w-full"}>
                 <Image
                   alt="nextui logo"
@@ -38,10 +42,29 @@ export default function PricingPage() {
               </CardHeader>
               <Divider />
               <CardBody className={"text-left "}>
-                <p>Type: Website</p>
-                <p>For: Sport Association</p>
-                <p>Tech: HTML/SASS/JS</p>
-                <p>offline (old)</p>
+                <p>
+                  <span className={title({ size: "xs", color: "blue" })}>
+                    Type:
+                  </span>{" "}
+                  Website
+                </p>
+                <p>
+                  <span className={title({ size: "xs", color: "blue" })}>
+                    For:
+                  </span>{" "}
+                  Sport Association
+                </p>
+                <p>
+                  <span className={title({ size: "xs", color: "blue" })}>
+                    Tech:
+                  </span>{" "}
+                  HTML/SASS/JS
+                </p>
+                <p>
+                  <span className={title({ size: "xs", color: "pink" })}>
+                    offline
+                  </span>
+                </p>
               </CardBody>
               <Divider />
               <CardFooter>
@@ -55,7 +78,7 @@ export default function PricingPage() {
               </CardFooter>
             </Card>
 
-            <Card className={"p-4 m-4 embla__slide"}>
+            <Card className={"p-4 m-4 embla__slide justify-between"}>
               <CardHeader className={"justify-evenly w-full"}>
                 <Image
                   alt="nextui logo"
@@ -68,10 +91,28 @@ export default function PricingPage() {
               </CardHeader>
               <Divider />
               <CardBody className={"text-left"}>
-                <p>Type: Android App</p>
-                <p>For: Training</p>
-                <p>Tech: Kotlin / Jetpack Compose</p>
-                <p>offline (old)</p>
+                <p>
+                  {" "}
+                  <span className={title({ size: "xs", color: "blue" })}>
+                    Type:
+                  </span>{" "}
+                  Android App
+                </p>
+                <p>
+                  {" "}
+                  <span className={title({ size: "xs", color: "blue" })}>
+                    For:
+                  </span>{" "}
+                  Training
+                </p>
+                <p>
+                  {" "}
+                  <span className={title({ size: "xs", color: "blue" })}>
+                    Tech:
+                  </span>{" "}
+                  Kotlin / Jetpack Compose
+                </p>
+                <p> </p>
               </CardBody>
               <Divider />
               <CardFooter>
@@ -85,7 +126,7 @@ export default function PricingPage() {
               </CardFooter>
             </Card>
 
-            <Card className={"p-4 m-4 embla__slide"}>
+            <Card className={"p-4 m-4 embla__slide justify-between"}>
               <CardHeader className={"justify-evenly w-full"}>
                 <Image
                   alt="nextui logo"
@@ -98,17 +139,97 @@ export default function PricingPage() {
               </CardHeader>
               <Divider />
               <CardBody className={"text-left"}>
-                <p>Type: Backend, API, Database, CD/CI</p>
-                <p>For: Training</p>
-                <p>Tech: Kotlin / SpringBoot / Docker / k8s</p>
-                <p>offline (old)</p>
+                <p>
+                  {" "}
+                  <span className={title({ size: "xs", color: "blue" })}>
+                    Type:
+                  </span>{" "}
+                  Backend, API, CD/CI
+                </p>
+                <p>
+                  {" "}
+                  <span className={title({ size: "xs", color: "blue" })}>
+                    For:
+                  </span>{" "}
+                  Training
+                </p>
+                <p>
+                  {" "}
+                  <span className={title({ size: "xs", color: "blue" })}>
+                    Tech:
+                  </span>{" "}
+                  Kotlin / SpringBoot / Docker
+                </p>
+                <p>
+                  {" "}
+                  <span className={title({ size: "xs", color: "pink" })}>
+                    offline
+                  </span>
+                </p>
               </CardBody>
               <Divider />
               <CardFooter>
                 <Link
                   isExternal
                   showAnchorIcon
-                  href="https://github.com/CedricSanchezGithub/Bagueton_Client/"
+                  href="https://github.com/CedricSanchezGithub/emf-customs"
+                >
+                  Visit source code on GitHub.
+                </Link>
+              </CardFooter>
+            </Card>
+
+            <Card className={"p-4 m-4 embla__slide justify-between"}>
+              <CardHeader className={"justify-evenly w-full"}>
+                <Image
+                  alt="nextui logo"
+                  height={40}
+                  radius="sm"
+                  src="./EMFlogo.webp"
+                  width={40}
+                />
+                Emf Calendar
+              </CardHeader>
+              <Divider />
+              <CardBody className={"text-left"}>
+                <p>
+                  {" "}
+                  <span className={title({ size: "xs", color: "blue" })}>
+                    Type:
+                  </span>{" "}
+                  ReactJS, fullcalendar.io, MUI
+                </p>
+                <p>
+                  {" "}
+                  <span className={title({ size: "xs", color: "blue" })}>
+                    For:
+                  </span>{" "}
+                  EMF / Training
+                </p>
+                <p>
+                  {" "}
+                  <span className={title({ size: "xs", color: "blue" })}>
+                    Tech:
+                  </span>{" "}
+                  Kotlin / SpringBoot / Docker
+                </p>
+                <p>
+                  {" "}
+                  <Link
+                    className={title({ size: "xs", color: "green" })}
+                    href={"https://emf.fr/calendrier-des-evenements/"}
+                    isExternal={true}
+                  >
+                    online
+                  </Link>
+                </p>
+              </CardBody>
+              <Divider />
+              <CardFooter>
+                <Link
+                  isExternal
+                  showAnchorIcon
+                  href="https://github.com/CedricSanchezGithub/emf-customs"
                 >
                   Visit source code on GitHub.
                 </Link>
@@ -117,12 +238,17 @@ export default function PricingPage() {
           </div>
         </div>
       </div>
-      <button className="embla__prev" onClick={scrollPrev}>
-        Prev...
-      </button>
-      <button className="embla__next" onClick={scrollNext}>
-        ...Next
-      </button>
+      <div className={"flex w-full justify-center"}>
+        <LineMdChevronSmallLeft
+          className="embla__prev cursor-pointer"
+          onClick={scrollPrev}
+        />
+
+        <LineMdChevronSmallRight
+          className="embla__next cursor-pointer"
+          onClick={scrollNext}
+        />
+      </div>
     </div>
   );
 }

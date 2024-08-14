@@ -1,4 +1,5 @@
 import * as React from "react";
+import { SVGProps } from "react";
 
 import { IconSvgProps } from "@/types";
 
@@ -213,3 +214,63 @@ export const NextUILogo: React.FC<IconSvgProps> = (props) => {
     </svg>
   );
 };
+
+export function LineMdChevronSmallRight(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      height="2.5em"
+      viewBox="0 0 24 24"
+      width="2.5em"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <g transform="translate(24 0) scale(-1 1)">
+        <path
+          d="M9 12L14 7M9 12L14 17"
+          fill="currentColor"
+          stroke="currentColor"
+          strokeDasharray={8}
+          strokeDashoffset={8}
+          strokeLinecap="round"
+          strokeWidth={2}
+        >
+          <animate
+            attributeName="stroke-dashoffset"
+            dur="0.3s"
+            fill="freeze"
+            values="8;0"
+          />
+        </path>
+      </g>
+    </svg>
+  );
+}
+
+export function LineMdChevronSmallLeft(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      height="2.5em"
+      viewBox="0 0 24 24"
+      width="2.5em"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M9 12L14 7M9 12L14 17"
+        fill="currentColor"
+        stroke="currentColor"
+        strokeDasharray={8}
+        strokeDashoffset={8}
+        strokeLinecap="round"
+        strokeWidth={2}
+      >
+        <animate
+          attributeName="stroke-dashoffset"
+          dur="0.3s"
+          fill="freeze"
+          values="8;0"
+        />
+      </path>
+    </svg>
+  );
+}

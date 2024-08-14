@@ -42,7 +42,7 @@ export const siteConfig = {
   links: {
     github: "https://github.com/CedricSanchezGithub",
     twitter: "https://twitter.com/getnextui",
-    docs: "https://nextui.org",
+    docs: "./docs/CV_Cédric.pdf",
     discord: "https://discord.gg/9b6yyZKmH4",
   },
 };
