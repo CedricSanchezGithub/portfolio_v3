@@ -21,7 +21,7 @@ export default function DocsPage() {
   return (
     <div>
       <h1 className={title({ color: "blue" })}>Introduction</h1>
-      <div className="grid grid-cols-2 gap-4 grid-rows-2 justify-center items-center py-6">
+      <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 lg:grid-rows-2 justify-center items-center py-6">
         <div className="row-span-2 h-full">
           <Card
             isBlurred
