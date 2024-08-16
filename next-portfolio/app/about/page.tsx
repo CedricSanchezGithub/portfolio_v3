@@ -8,7 +8,7 @@ export default function AboutPage() {
   return (
     <div>
       <h1 className={title({ color: "blue" })}>About</h1>
-      <Card className={"my-4"}>
+      <Card className={"my-4 border-1 border-gray-800"}>
         <CardHeader />
         <CardBody>
           This portfolio showcases my journey, my projects, and my aspirations.

@@ -25,7 +25,7 @@ export default function DocsPage() {
         <div className="row-span-2 h-full">
           <Card
             isBlurred
-            className="border-none bg-background/60 dark:bg-default-100/50 max-w-[610px] h-full p-4 flex items-center"
+            className="border-1 border-gray-800 bg-background/60 dark:bg-default-100/50 max-w-[610px] h-full p-4 flex items-center"
             shadow="sm"
           >
             <CardHeader className={title({ size: "sm" })}>Story</CardHeader>
@@ -36,7 +36,7 @@ export default function DocsPage() {
               className="object-cover"
               src="https://t3.ftcdn.net/jpg/05/79/48/52/240_F_579485255_hzHox0stuQmBx5QViwnQqQjk7RD2AJza.jpg"
             />
-            <CardBody>
+            <CardBody className={"justify-center"}>
               After several years as a baker, I decided to carry on my passion
               for IT.
               <br />
@@ -53,7 +53,7 @@ export default function DocsPage() {
         </div>
         <Card
           isBlurred
-          className="border-none bg-background/60 dark:bg-default-100/50 max-w-[610px] h-full "
+          className="border-1 border-gray-800 bg-background/60 dark:bg-default-100/50 max-w-[610px] h-full "
           shadow="sm"
         >
           <CardHeader className={title({ size: "sm" })}>Technology</CardHeader>
@@ -112,7 +112,7 @@ export default function DocsPage() {
         </Card>
         <Card
           isBlurred
-          className="border-none grid bg-background/60 dark:bg-default-100/50 max-w-[610px] h-full"
+          className="border-1 border-gray-800 grid bg-background/60 dark:bg-default-100/50 max-w-[610px] h-full"
           shadow="sm"
         >
           <div className={"flex flex-col"}>
@@ -123,7 +123,7 @@ export default function DocsPage() {
             <CardHeader className={title({ size: "sm" })}>
               Hobbies and interests
             </CardHeader>
-            Weightlifting Mountains New technologies Sciences
+            Weightlifting Mountains New Technologies Sciences
           </div>
         </Card>
       </div>
