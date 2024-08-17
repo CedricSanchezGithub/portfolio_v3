@@ -14,6 +14,7 @@ import { link as linkStyles } from "@nextui-org/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
 import React from "react";
+import { useUser } from "@auth0/nextjs-auth0/client";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
@@ -21,6 +22,7 @@ import { GithubIcon, DiscordIcon, Logo } from "@/components/icons";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const { user } = useUser();
 
   return (
     <NextUINavbar
@@ -67,6 +69,14 @@ export const Navbar = () => {
           <Link isExternal aria-label="Github" href={siteConfig.links.github}>
             <GithubIcon className="text-default-500" />
           </Link>
+          {!user && <Link href={"/api/auth/login"}>Login</Link>}
+          {user && (
+            <>
+              <Link href={"/api/auth/logout"}>Logout</Link>
+              <Link href={"/user"}>{user.name}</Link>
+            </>
+          )}
+
           <ThemeSwitch />
         </NavbarItem>
       </NavbarContent>
