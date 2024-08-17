@@ -69,7 +69,7 @@ export default function Home() {
           </Snippet>
         </div>
       </div>
-      <div className={"hidden lg:block px-6 w-1/4"}>
+      <div className={"hidden lg:block mx-6 w-1/4"}>
         <Image src={"./portrait.jpg"} />
       </div>
     </div>

@@ -15,6 +15,13 @@ import NextLink from "next/link";
 import clsx from "clsx";
 import React from "react";
 import { useUser } from "@auth0/nextjs-auth0/client";
+import { Avatar } from "@nextui-org/avatar";
+import {
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
+} from "@nextui-org/dropdown";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
@@ -72,8 +79,30 @@ export const Navbar = () => {
           {!user && <Link href={"/api/auth/login"}>Login</Link>}
           {user && (
             <>
-              <Link href={"/api/auth/logout"}>Logout</Link>
-              <Link href={"/user"}>{user.name}</Link>
+              <Dropdown placement="bottom-end">
+                <DropdownTrigger>
+                  <Avatar
+                    isBordered
+                    alt={user.name || "User"}
+                    as={"button"}
+                    className={"transition-transform"}
+                    radius="sm"
+                    src={user.picture ?? "/path/to/default-image.jpg"}
+                  />
+                </DropdownTrigger>
+                <DropdownMenu aria-label="Profile Actions" variant="flat">
+                  <DropdownItem key="profile" className="gap-2">
+                    <p className="font-semibold">Signed in as</p>
+                    <p className="font-semibold">{user.name}</p>
+                    <p>
+                      <Link href={"/user"}>My Panel</Link>
+                    </p>
+                    <p>
+                      <Link href={"/api/auth/logout"}>Logout</Link>
+                    </p>
+                  </DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
             </>
           )}
 
