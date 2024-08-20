@@ -14,8 +14,7 @@ export default function AboutPage() {
           This portfolio showcases my journey, my projects, and my aspirations.
           It allows me to experiment with various ideas I have in mind. If you,
           a traveler who stumbles upon this site, have any feedback to offer,
-          please don&#39;t hesitate to contact me!
-        </CardBody>
+          please don&#39;t hesitate to contact me!</CardBody>
         <CardFooter>
           <User
             avatarProps={{
