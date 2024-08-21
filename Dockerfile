@@ -20,7 +20,7 @@ COPY next-portfolio .
 RUN npm run build
 
 # Exposer le port 3000 sur lequel l'application Next.js va tourner
-EXPOSE 3000
+EXPOSE 3030
 
 # Commande par défaut pour démarrer l'application Next.js
 CMD ["npm", "start"]
