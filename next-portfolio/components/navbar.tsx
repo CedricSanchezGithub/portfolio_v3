@@ -22,10 +22,11 @@ import {
   DropdownMenu,
   DropdownTrigger,
 } from "@nextui-org/dropdown";
+import { Chip } from "@nextui-org/chip";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import { GithubIcon, DiscordIcon, Logo } from "@/components/icons";
+import { GithubIcon, Logo, LinkedinIcon } from "@/components/icons";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -70,25 +71,51 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
-            <DiscordIcon className="text-default-500" />
+          <Link
+            isExternal
+            aria-label="Linkedin"
+            href={siteConfig.links.linkedin}
+          >
+            <LinkedinIcon className="text-default-500" />
           </Link>
           <Link isExternal aria-label="Github" href={siteConfig.links.github}>
             <GithubIcon className="text-default-500" />
           </Link>
-          {!user && <Link href={"/api/auth/login"}>Login</Link>}
+          <ThemeSwitch />
+
+          {!user && (
+            <Chip
+              avatar={
+                <Avatar
+                  getInitials={(name) => name.charAt(0)}
+                  name="A"
+                  size="sm"
+                />
+              }
+              variant="flat"
+            >
+              {" "}
+              <Link color="success" href={"/api/auth/login"}>
+                Login
+              </Link>
+            </Chip>
+          )}
           {user && (
             <>
               <Dropdown placement="bottom-end">
                 <DropdownTrigger>
-                  <Avatar
-                    isBordered
-                    alt={user.name || "User"}
+                  <Chip
                     as={"button"}
-                    className={"transition-transform"}
-                    radius="sm"
-                    src={user.picture ?? "/path/to/default-image.jpg"}
-                  />
+                    avatar={
+                      <Avatar
+                        name={user.nickname || "User"}
+                        src={user.picture || ""}
+                      />
+                    }
+                    variant="flat"
+                  >
+                    {user.nickname}
+                  </Chip>
                 </DropdownTrigger>
                 <DropdownMenu aria-label="Profile Actions" variant="flat">
                   <DropdownItem key="profile" className="gap-2">
@@ -105,8 +132,6 @@ export const Navbar = () => {
               </Dropdown>
             </>
           )}
-
-          <ThemeSwitch />
         </NavbarItem>
       </NavbarContent>
 

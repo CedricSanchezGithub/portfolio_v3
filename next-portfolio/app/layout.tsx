@@ -3,13 +3,13 @@ import { Metadata, Viewport } from "next";
 import { Link } from "@nextui-org/link";
 import clsx from "clsx";
 import { UserProvider } from "@auth0/nextjs-auth0/client";
+import React from "react";
 
 import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
-import React from "react";
 
 export const metadata: Metadata = {
   title: {
@@ -58,7 +58,10 @@ export default function RootLayout({
                   title="nextui.org homepage"
                 >
                   <span className="text-default-600">Powered by</span>
-                  <p className="text-primary">NextUI</p>
+                  <p>
+                    <span className="text-success">NextUI</span> &
+                    <span className="text-success"> Raspberry</span>
+                  </p>
                 </Link>
               </footer>
             </div>

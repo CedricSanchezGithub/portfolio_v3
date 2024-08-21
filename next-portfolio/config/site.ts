@@ -20,6 +20,10 @@ export const siteConfig = {
       label: "About",
       href: "/about",
     },
+    {
+      label: "Raspberry",
+      href: "/raspberry",
+    },
   ],
   navMenuItems: [
     {
@@ -38,11 +42,15 @@ export const siteConfig = {
       label: "About",
       href: "/about",
     },
+    {
+      label: "Raspberry",
+      href: "/raspberry",
+    },
   ],
   links: {
     github: "https://github.com/CedricSanchezGithub",
     twitter: "https://twitter.com/getnextui",
     docs: "./docs/CV_Cédric.pdf",
-    discord: "https://discord.gg/9b6yyZKmH4",
+    linkedin: "https://www.linkedin.com/in/c%C3%A9dric-sanchez-902257277/",
   },
 };

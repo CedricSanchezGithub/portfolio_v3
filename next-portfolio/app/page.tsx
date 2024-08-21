@@ -17,7 +17,7 @@ export default function Home() {
           <h1 className={title()}>Hello there!</h1>
           <br />
           <h1 className={title()}>I&apos;m</h1>
-          <h1 className={title({ color: "blue" })}> Cédric Sanchez</h1>
+          <h1 className={title({ color: "green" })}> Cédric Sanchez</h1>
           <br />
           <h2
             className={subtitle({
@@ -34,7 +34,7 @@ export default function Home() {
           <Link
             isExternal
             className={buttonStyles({
-              color: "primary",
+              color: "success",
               radius: "full",
               variant: "shadow",
             })}
@@ -56,9 +56,10 @@ export default function Home() {
           <Snippet hideCopyButton hideSymbol variant="bordered">
             <span>
               Currently engaged with{" "}
-              <Code color="primary">
+              <Code color="success">
                 <Link
                   isExternal
+                  color="success"
                   href={
                     "https://www.credit-agricole.com/marques-et-metiers/toutes-nos-marques/credit-agricole-technologies-et-services"
                   }
