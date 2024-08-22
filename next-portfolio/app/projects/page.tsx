@@ -25,8 +25,8 @@ export default function PricingPage() {
 
   return (
     <div>
-      <h1 className={title({ color: "blue" })}>My projects</h1>
-      <div className="hidden lg:block mt-8">
+      <h1 className={title({ color: "green" })}>My projects</h1>
+      <div className="hidden lg:block mt-8 py-8">
         <div className={"flex items-center"}>
           <div>
             <LineMdChevronSmallLeft
@@ -55,19 +55,19 @@ export default function PricingPage() {
                   <Divider />
                   <CardBody className={"text-left "}>
                     <p>
-                      <span className={title({ size: "xs", color: "blue" })}>
+                      <span className={title({ size: "xs", color: "green" })}>
                         Type:
                       </span>{" "}
                       Website
                     </p>
                     <p>
-                      <span className={title({ size: "xs", color: "blue" })}>
+                      <span className={title({ size: "xs", color: "green" })}>
                         For:
                       </span>{" "}
                       Sport Association
                     </p>
                     <p>
-                      <span className={title({ size: "xs", color: "blue" })}>
+                      <span className={title({ size: "xs", color: "green" })}>
                         Tech:
                       </span>{" "}
                       HTML/SASS/JS
@@ -109,21 +109,21 @@ export default function PricingPage() {
                   <CardBody className={"text-left"}>
                     <p>
                       {" "}
-                      <span className={title({ size: "xs", color: "blue" })}>
+                      <span className={title({ size: "xs", color: "green" })}>
                         Type:
                       </span>{" "}
                       Android App
                     </p>
                     <p>
                       {" "}
-                      <span className={title({ size: "xs", color: "blue" })}>
+                      <span className={title({ size: "xs", color: "green" })}>
                         For:
                       </span>{" "}
                       Training
                     </p>
                     <p>
                       {" "}
-                      <span className={title({ size: "xs", color: "blue" })}>
+                      <span className={title({ size: "xs", color: "green" })}>
                         Tech:
                       </span>{" "}
                       Kotlin / Jetpack Compose
@@ -161,21 +161,21 @@ export default function PricingPage() {
                   <CardBody className={"text-left"}>
                     <p>
                       {" "}
-                      <span className={title({ size: "xs", color: "blue" })}>
+                      <span className={title({ size: "xs", color: "green" })}>
                         Type:
                       </span>{" "}
                       Backend, API, CD/CI
                     </p>
                     <p>
                       {" "}
-                      <span className={title({ size: "xs", color: "blue" })}>
+                      <span className={title({ size: "xs", color: "green" })}>
                         For:
                       </span>{" "}
                       Training
                     </p>
                     <p>
                       {" "}
-                      <span className={title({ size: "xs", color: "blue" })}>
+                      <span className={title({ size: "xs", color: "green" })}>
                         Tech:
                       </span>{" "}
                       Kotlin / SpringBoot / Docker
@@ -218,21 +218,21 @@ export default function PricingPage() {
                   <CardBody className={"text-left"}>
                     <p>
                       {" "}
-                      <span className={title({ size: "xs", color: "blue" })}>
+                      <span className={title({ size: "xs", color: "green" })}>
                         Type:
                       </span>{" "}
                       Dates, Calendar
                     </p>
                     <p>
                       {" "}
-                      <span className={title({ size: "xs", color: "blue" })}>
+                      <span className={title({ size: "xs", color: "green" })}>
                         For:
                       </span>{" "}
                       EMF / Training
                     </p>
                     <p>
                       {" "}
-                      <span className={title({ size: "xs", color: "blue" })}>
+                      <span className={title({ size: "xs", color: "green" })}>
                         Tech:
                       </span>{" "}
                       ReactJS, fullcalendar.io, MUI
@@ -289,17 +289,19 @@ export default function PricingPage() {
           <Divider />
           <CardBody className={"text-left "}>
             <p>
-              <span className={title({ size: "xs", color: "blue" })}>
+              <span className={title({ size: "xs", color: "green" })}>
                 Type:
               </span>{" "}
               Website
             </p>
             <p>
-              <span className={title({ size: "xs", color: "blue" })}>For:</span>{" "}
+              <span className={title({ size: "xs", color: "green" })}>
+                For:
+              </span>{" "}
               Sport Association
             </p>
             <p>
-              <span className={title({ size: "xs", color: "blue" })}>
+              <span className={title({ size: "xs", color: "green" })}>
                 Tech:
               </span>{" "}
               HTML/SASS/JS
@@ -341,21 +343,21 @@ export default function PricingPage() {
           <CardBody className={"text-left"}>
             <p>
               {" "}
-              <span className={title({ size: "xs", color: "blue" })}>
+              <span className={title({ size: "xs", color: "green" })}>
                 Type:
               </span>{" "}
               Android App
             </p>
             <p>
               {" "}
-              <span className={title({ size: "xs", color: "blue" })}>
+              <span className={title({ size: "xs", color: "green" })}>
                 For:
               </span>{" "}
               Training
             </p>
             <p>
               {" "}
-              <span className={title({ size: "xs", color: "blue" })}>
+              <span className={title({ size: "xs", color: "green" })}>
                 Tech:
               </span>{" "}
               Kotlin / Jetpack Compose
@@ -393,21 +395,21 @@ export default function PricingPage() {
           <CardBody className={"text-left"}>
             <p>
               {" "}
-              <span className={title({ size: "xs", color: "blue" })}>
+              <span className={title({ size: "xs", color: "green" })}>
                 Type:
               </span>{" "}
               Backend, API, CD/CI
             </p>
             <p>
               {" "}
-              <span className={title({ size: "xs", color: "blue" })}>
+              <span className={title({ size: "xs", color: "green" })}>
                 For:
               </span>{" "}
               Training
             </p>
             <p>
               {" "}
-              <span className={title({ size: "xs", color: "blue" })}>
+              <span className={title({ size: "xs", color: "green" })}>
                 Tech:
               </span>{" "}
               Kotlin / SpringBoot / Docker
@@ -450,21 +452,21 @@ export default function PricingPage() {
           <CardBody className={"text-left"}>
             <p>
               {" "}
-              <span className={title({ size: "xs", color: "blue" })}>
+              <span className={title({ size: "xs", color: "green" })}>
                 Type:
               </span>{" "}
               Dates, Calendar
             </p>
             <p>
               {" "}
-              <span className={title({ size: "xs", color: "blue" })}>
+              <span className={title({ size: "xs", color: "green" })}>
                 For:
               </span>{" "}
               EMF / Training
             </p>
             <p>
               {" "}
-              <span className={title({ size: "xs", color: "blue" })}>
+              <span className={title({ size: "xs", color: "green" })}>
                 Tech:
               </span>{" "}
               ReactJS, fullcalendar.io, MUI

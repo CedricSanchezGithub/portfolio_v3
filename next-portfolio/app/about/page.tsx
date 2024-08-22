@@ -8,8 +8,8 @@ import { title } from "@/components/primitives";
 export default function AboutPage() {
   return (
     <div>
-      <h1 className={title({ color: "blue" })}>About</h1>
-      <Card className={"my-4 border-1 border-gray-800"}>
+      <h1 className={title({ color: "green" })}>About</h1>
+      <Card className={"my-8 border-1 border-gray-800"}>
         <CardHeader />
         <CardBody>
           This portfolio showcases my journey, my projects, and my aspirations.

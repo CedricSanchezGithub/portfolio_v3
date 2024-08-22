@@ -16,7 +16,7 @@ export default function ProfileClient() {
   return (
     user && (
       <div>
-        <h1 className={title({ color: "blue" })}>My Panel</h1>
+        <h1 className={title({ color: "green" })}>My Panel</h1>
         <Card className={"my-4 border-1 border-gray-800"}>
           <CardHeader />
           <CardBody>
