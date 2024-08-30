@@ -44,7 +44,7 @@ export default function Home() {
           </Link>
           <Link
             isExternal
-            className={buttonStyles({ variant: "bordered", radius: "full" })}
+            className={buttonStyles({ variant: "shadow", radius: "full" })}
             href={siteConfig.links.github}
           >
             <GithubIcon size={20} />
@@ -54,19 +54,36 @@ export default function Home() {
 
         <div className="mt-8">
           <Snippet hideCopyButton hideSymbol variant="bordered">
-            <span>
-              Currently engaged with{" "}
-              <Code color="success">
-                <Link
-                  isExternal
-                  color="success"
-                  href={
-                    "https://www.credit-agricole.com/marques-et-metiers/toutes-nos-marques/credit-agricole-technologies-et-services"
-                  }
-                >
-                  CA-TS
-                </Link>
-              </Code>
+            <span className="flex flex-col items-center">
+              <span>
+                Currently engaged with{" "}
+                <Code color="success">
+                  <Link
+                    isExternal
+                    color="success"
+                    href={
+                      "https://www.credit-agricole.com/marques-et-metiers/toutes-nos-marques/credit-agricole-technologies-et-services"
+                    }
+                  >
+                    CA-TS
+                  </Link>
+                </Code>
+              </span>
+              <br />
+              <span>
+                And the school{" "}
+                <Code color="success">
+                  <Link
+                    isExternal
+                    color="success"
+                    href={
+                      "https://www.epsi.fr/programmes/bachelor-developpeur-ia/"
+                    }
+                  >
+                    EPSI
+                  </Link>
+                </Code>
+              </span>
             </span>
           </Snippet>
         </div>
