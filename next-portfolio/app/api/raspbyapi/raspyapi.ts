@@ -13,13 +13,12 @@ export const fetchContainers = async (): Promise<Container[]> => {
   const response = await fetch("http://192.168.1.50:8765/containers");
 
   if (!response.ok) {
-    throw new Error("Failed to fetch data");
+    throw new Error(
+      "Le script python semble hors ligne. Repassez plus tard :)",
+    );
   }
 
   const data: Container[] = await response.json();
-
-  console.log(data);
-  console.log(data[0].icon_url);
 
   return data;
 };
