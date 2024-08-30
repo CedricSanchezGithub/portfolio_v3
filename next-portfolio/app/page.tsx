@@ -8,6 +8,7 @@ import { Image } from "@nextui-org/image";
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import { GithubIcon } from "@/components/icons";
+import ParticlesComponent from "@/components/tsparticles";
 
 export default function Home() {
   return (

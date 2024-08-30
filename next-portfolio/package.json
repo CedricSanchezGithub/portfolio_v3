@@ -31,6 +31,8 @@
 		"@react-aria/ssr": "3.9.4",
 		"@react-aria/visually-hidden": "3.8.12",
 		"@tsparticles/engine": "^3.5.0",
+		"@tsparticles/react": "^3.0.0",
+		"@tsparticles/slim": "^3.5.0",
 		"axios": "^1.7.4",
 		"clsx": "2.1.1",
 		"embla-carousel-react": "^8.1.8",
