@@ -26,7 +26,7 @@ export default function PricingPage() {
   return (
     <div>
       <h1 className={title({ color: "green" })}>My projects</h1>
-      <div className="hidden lg:block mt-8 py-8">
+      <div className="hidden lg:block mt-8 py-8 ">
         <div className={"flex items-center"}>
           <div>
             <LineMdChevronSmallLeft
@@ -38,8 +38,9 @@ export default function PricingPage() {
             <div ref={emblaRef} className="embla__viewport">
               <div className="embla__container">
                 <Card
+                  isBlurred
                   className={
-                    " border-1 border-gray-800 p-4 m-4 embla__slide justify-between"
+                    " border-1 border-gray-800 bg-transparent p-4 m-4 embla__slide justify-between"
                   }
                 >
                   <CardHeader className={"justify-evenly w-full"}>
@@ -91,6 +92,7 @@ export default function PricingPage() {
                 </Card>
 
                 <Card
+                  isBlurred
                   className={
                     "border-1 border-gray-800 p-4 m-4 embla__slide justify-between"
                   }
@@ -143,6 +145,7 @@ export default function PricingPage() {
                 </Card>
 
                 <Card
+                  isBlurred
                   className={
                     "border-1 border-gray-800 p-4 m-4 embla__slide justify-between"
                   }
@@ -200,6 +203,7 @@ export default function PricingPage() {
                 </Card>
 
                 <Card
+                  isBlurred
                   className={
                     "border-1 border-gray-800 p-4 m-4 embla__slide justify-between"
                   }

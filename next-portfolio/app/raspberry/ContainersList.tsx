@@ -25,7 +25,11 @@ const ContainersList: React.FC = () => {
     <ul>
       {containers.map((container) => (
         <li key={container.id}>
-          <Card className={"p-4 m-4"}>
+          <Card
+            className={
+              "border-1 border-gray-800 p-4 m-4 bg-transparent backdrop-blur"
+            }
+          >
             <CardHeader className="flex gap-3">
               <Image height={50} src={container.icon_url} width={50} />
               {container.name}

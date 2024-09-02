@@ -8,11 +8,10 @@ import { Image } from "@nextui-org/image";
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import { GithubIcon } from "@/components/icons";
-import ParticlesComponent from "@/components/tsparticles";
 
 export default function Home() {
   return (
-    <div className={"flex justify-center"}>
+    <div className={"flex justify-center backdrop-blur"}>
       <div className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
         <div className="inline-block max-w-lg text-center justify-center">
           <h1 className={title()}>Hello there!</h1>
@@ -53,7 +52,7 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="mt-8">
+        <div className="mt-8 backdrop-blur">
           <Snippet hideCopyButton hideSymbol variant="bordered">
             <span className="flex flex-col items-center">
               <span>

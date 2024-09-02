@@ -6,7 +6,8 @@ import {
   MoveDirection,
   OutMode,
 } from "@tsparticles/engine";
-import { loadSlim } from "@tsparticles/slim"; 
+import { loadSlim } from "@tsparticles/slim";
+import { useTheme } from "next-themes";
 
 const ParticlesComponent = () => {
   const [init, setInit] = useState(false);
@@ -33,7 +34,7 @@ const ParticlesComponent = () => {
             mode: "push",
           },
           onHover: {
-            enable: true,
+            enable: false,
             mode: "repulse",
           },
         },
@@ -49,22 +50,22 @@ const ParticlesComponent = () => {
       },
       particles: {
         color: {
-          value: "#ffffff",
+          value: "",
         },
         links: {
-          color: "#ffffff",
+          color: "#17C964",
           distance: 150,
           enable: true,
           opacity: 0.5,
           width: 0.5,
         },
         move: {
-          direction: MoveDirection.bottom,
+          direction: MoveDirection.outside,
           enable: true,
           outModes: {
-            default: OutMode.out,
+            default: OutMode.bounce,
           },
-          random: false,
+          random: true,
           speed: 1,
           straight: false,
         },
@@ -72,7 +73,7 @@ const ParticlesComponent = () => {
           density: {
             enable: true,
           },
-          value: 80,
+          value: 150,
         },
         opacity: {
           value: 0.5,
@@ -86,15 +87,15 @@ const ParticlesComponent = () => {
       },
       detectRetina: true,
     }),
-    [],
+    []
   );
 
   if (init) {
     return (
       <Particles
         id="tsparticles"
-        particlesLoaded={particlesLoaded}
         options={options}
+        particlesLoaded={particlesLoaded}
       />
     );
   }
