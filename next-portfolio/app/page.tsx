@@ -88,7 +88,7 @@ export default function Home() {
           </Snippet>
         </div>
       </div>
-      <div className={"hidden lg:block mx-6 w-1/4"}>
+      <div className={"hidden lg:block mx-6 w-1/4 shadow-2xl shadow-green-500/50 rounded-2xl"}>
         <Image src={"./portrait.jpg"} />
       </div>
     </div>

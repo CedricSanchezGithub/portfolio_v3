@@ -27,7 +27,7 @@ const ContainersList: React.FC = () => {
         <li key={container.id}>
           <Card
             className={
-              "border-1 border-gray-800 p-4 m-4 bg-transparent backdrop-blur"
+              "border-1 border-gray-800 p-4 m-4 bg-transparent backdrop-blur shadow-2xl shadow-green-500/50"
             }
           >
             <CardHeader className="flex gap-3">

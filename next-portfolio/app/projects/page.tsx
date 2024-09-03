@@ -40,7 +40,7 @@ export default function PricingPage() {
                 <Card
                   isBlurred
                   className={
-                    " border-1 border-gray-800 bg-transparent p-4 m-4 embla__slide justify-between"
+                    " border-1 border-gray-800 bg-transparent p-4 m-4 embla__slide justify-between shadow-md shadow-green-500/50"
                   }
                 >
                   <CardHeader className={"justify-evenly w-full"}>
@@ -94,7 +94,7 @@ export default function PricingPage() {
                 <Card
                   isBlurred
                   className={
-                    "border-1 border-gray-800 p-4 m-4 embla__slide justify-between"
+                    "border-1 border-gray-800 p-4 m-4 embla__slide justify-between shadow-md shadow-green-500/50"
                   }
                 >
                   <CardHeader className={"justify-evenly w-full"}>
@@ -147,7 +147,7 @@ export default function PricingPage() {
                 <Card
                   isBlurred
                   className={
-                    "border-1 border-gray-800 p-4 m-4 embla__slide justify-between"
+                    "border-1 border-gray-800 p-4 m-4 embla__slide justify-between shadow-md shadow-green-500/50"
                   }
                 >
                   <CardHeader className={"justify-evenly w-full"}>
@@ -205,7 +205,7 @@ export default function PricingPage() {
                 <Card
                   isBlurred
                   className={
-                    "border-1 border-gray-800 p-4 m-4 embla__slide justify-between"
+                    "border-1 border-gray-800 p-4 m-4 embla__slide justify-between shadow-md shadow-green-500/50"
                   }
                 >
                   <CardHeader className={"justify-evenly w-full"}>
@@ -277,7 +277,7 @@ export default function PricingPage() {
       <div className="lg:hidden block">
         <Card
           className={
-            " border-1 border-gray-800 p-4 m-4 embla__slide justify-between"
+            " border-1 border-gray-800 p-4 m-4 embla__slide justify-between shadow-md shadow-green-500/50"
           }
         >
           <CardHeader className={"justify-evenly w-full"}>

@@ -25,8 +25,7 @@ export default function DocsPage() {
         <div className="row-span-2 h-full">
           <Card
             isBlurred
-            className="border-1 border-gray-800 max-w-[610px] h-full p-4 flex items-center"
-            shadow="sm"
+            className="border-1 border-gray-800 max-w-[610px] h-full p-4 flex items-center shadow-2xl shadow-green-500/50"
           >
             <CardHeader className={title({ size: "sm" })}>Story</CardHeader>
             <Image
@@ -53,8 +52,7 @@ export default function DocsPage() {
         </div>
         <Card
           isBlurred
-          className="border-1 border-gray-800 max-w-[610px] h-full "
-          shadow="sm"
+          className="border-1 border-gray-800 max-w-[610px] h-full shadow-2xl shadow-green-500/50"
         >
           <CardHeader className={title({ size: "sm" })}>Technology</CardHeader>
           <div
@@ -112,7 +110,7 @@ export default function DocsPage() {
         </Card>
         <Card
           isBlurred
-          className="border-1 border-gray-800 grid max-w-[610px] h-full"
+          className="border-1 border-gray-800 grid max-w-[610px] h-full shadow-2xl shadow-green-500/50"
           shadow="sm"
         >
           <div className={"flex flex-col"}>

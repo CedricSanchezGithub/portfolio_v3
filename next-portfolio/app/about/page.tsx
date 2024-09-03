@@ -10,7 +10,9 @@ export default function AboutPage() {
     <div>
       <h1 className={title({ color: "green" })}>About</h1>
       <Card
-        className={"my-8 border-1 border-gray-800 bg-transparent backdrop-blur"}
+        className={
+          "my-8 border-1 border-gray-800 bg-transparent backdrop-blur shadow-2xl shadow-green-500/50"
+        }
       >
         <CardHeader />
         <CardBody>
